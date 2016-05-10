@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
    		self.friendships.where(state: "active").map(&:friend) + self.inverse_friendships.where(state: "active").map(&:user)
  		end
 
- 		def pending_friend_requests_fron
+ 		def pending_friend_requests_from
    		self.inverse_friendships.where(state: "pending").map(&:user)
  		end
 
@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
      return "requested"
    		end
  	end
+
+  def friendship_relation(user_2)
+    Friendship.where(user_id: [self.id, user_2.id], friend_id: [self.id, user_2.id]).first
+  end
  end

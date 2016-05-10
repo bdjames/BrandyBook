@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'public_activity'
 gem 'gravatarify', '~> 3.0.0'
 gem 'devise'
 gem 'simple_form'
