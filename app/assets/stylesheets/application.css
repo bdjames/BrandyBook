@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background-image:url(frands.jpeg); 
+	size: relative;
+}
+.navbar-default {
+	background-color: #909D9E;
+}
+
